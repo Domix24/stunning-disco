@@ -19,6 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    
     if: 1 == 2
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -218,6 +219,8 @@ jobs:
           ' -F repo="ideal-fishstick" -F owner="Domix24" > query_data.json
           OID=$(jq '.data.repository.defaultBranchRef.target.history.nodes[0].oid' query_data.json)
           FILECO=$(date | base64)
+          echo $OID >> data.json
+          cat data.json
           gh api graphql -H X-Github-Next-Global-ID:1 -f query='
             mutation ($input: CreateCommitOnBranchInput!) {
               createCommitOnBranch(input: $input) {
