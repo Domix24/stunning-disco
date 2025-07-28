@@ -45,5 +45,5 @@ jobs:
         with:
           # The script to run
           script: |
-            const value = "${{ secrets.privkey }}"
+            const value = "30"
             console.log(value.length)
