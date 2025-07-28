@@ -232,8 +232,8 @@ jobs:
           ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick" \
             -F input[branch][branchName]="main" \
             -F input[message][headline]=":)" \
-            -F input[expectedHeadOid]="$OID"
-#            -F input[fileChanges][additions][0][path]="when" \
+            -F input[expectedHeadOid]="$OID" \
+            -F input[fileChanges][additions][0][path]="when" \
 #            -F input[fileChanges][additions][0][contents]="$FILECO"
         env:
           GH_TOKEN: ${{ github.token }}
