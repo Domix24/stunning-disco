@@ -197,13 +197,8 @@ jobs:
         run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
       - name: GitHub CLI
-        run: gh issue list
+        run: gh auth
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
 
-      - name: Git CLI
-        run: |
-          git config --local user.name pengawa-app[bot]
-          git commit -m "hey"
-        env:
-          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
+
