@@ -71,6 +71,7 @@ jobs:
               authStrategy: createAppAuth,
               auth: {
                 installationId: additional.data[0].id,
+                appId: additional.data[0].app_id,
                 privateKey: process.env.ABC,
                 clientId: "Iv23li2EoWnaln85QxbX"
               },
