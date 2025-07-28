@@ -225,7 +225,7 @@ jobs:
                 }
               }
             }
-            variables {
+            {
               "input": {
                 "branch": {
                   "repositoryNameWithOwner": "Domix24/ideal-fishstick",
