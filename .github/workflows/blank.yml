@@ -230,7 +230,7 @@ jobs:
                 }
               }
             }
-          '
+          ' --input -
         env:
           GH_TOKEN: ${{ github.token }}
 #          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
