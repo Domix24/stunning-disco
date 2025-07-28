@@ -191,8 +191,12 @@ jobs:
             return tooken.data.token
         env:
           ABC: ${{ secrets.privkey }}
+          
+      - name: Test
+        id: testo
+        run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
       - name: Get result
         run: gh auth login
         env:
-          GH_TOKEN: ${{ steps.github-script.outputs.result }}
+          GH_TOKEN: ${{ steps.testo.valux }}
