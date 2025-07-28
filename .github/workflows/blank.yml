@@ -197,6 +197,6 @@ jobs:
         run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
       - name: Get result
-        run: gh auth login
+        run: gh issue list
         env:
           GH_TOKEN: ${{ steps.testo.valux }}
