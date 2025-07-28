@@ -186,6 +186,7 @@ jobs:
             const tooken = await appiOctokit.request("POST /app/installations/{installation_id}/access_tokens", {
               installation_id: additional.data[0].id
             })
-            console.log(tooken)
+
+            return tooken.data.token
         env:
           ABC: ${{ secrets.privkey }}
