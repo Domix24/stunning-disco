@@ -38,20 +38,27 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.9.1
 
-      - run: npm install @octokit/auth-app
+      - run: npm install @octokit/core @octokit/auth-app
 
       - name: GitHub Script
         uses: actions/github-script@v7.0.1
         with:
           # The script to run
           script: |
+            const { Octokit } = require("@octokit/core")
             const { createAppAuth } = require("@octokit/auth-app")
-            const auth = createAppAuth({
-              appId: 952584,
-              privateKey: process.env.ABC,
-              clientId: "Iv23li2EoWnaln85QxbX"
+            
+            const appOctokit = new Octokit({
+              authStrategy: createAppAuth,
+              auth: {
+                appId: 952584,
+                privateKey: process.env.ABC,
+                clientId: "Iv23li2EoWnaln85QxbX"
+              },
             })
-            const appAuthentication = await auth({ type: "app" })
-            console.log(appAuthentication)
+
+            // Send requests as GitHub App
+            const { slug } = await appOctokit.request("GET /app")
+            console.log("authenticated as %s", slug)
         env:
           ABC: ${{ secrets.privkey }}
