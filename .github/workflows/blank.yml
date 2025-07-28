@@ -194,3 +194,5 @@ jobs:
 
       - name: Get result
         run: gh issue list
+        env:
+          GH_TOKEN: ${{ steps.github-script.outputs.result }}
