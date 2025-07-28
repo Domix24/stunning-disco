@@ -197,7 +197,7 @@ jobs:
         run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
       - name: GitHub CLI
-        run: gh auth
+        run: gh auth status
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
 
