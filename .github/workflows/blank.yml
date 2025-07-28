@@ -48,7 +48,7 @@ jobs:
             const { createAppAuth } = require("@octokit/auth-app")
             const auth = createAppAuth({
               appId: 952584,
-              privateKey: "-----BEGIN PRIVATE KEY-----\n...",
+              privateKey: ${{ secrets.privkey }},
               clientId: "Iv23li2EoWnaln85QxbX",
               clientSecret: "1234567890abcdef12341234567890abcdef1234",
             })
