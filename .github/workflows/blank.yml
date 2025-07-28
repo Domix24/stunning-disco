@@ -65,5 +65,13 @@ jobs:
             const additional = await appOctokit.request("GET /app/installations")
             console.log(additional)
             console.log(additional.data[0].permissions)
+
+            const blob = await octokit.request("POST /repos/{owner}/{repo}/git/blobs", {
+              owner: "Domix24",
+              repo: "ideal-fishstick",
+              content: "hello",
+              encoding: "utf-8"
+            })
+            console.log(blob)
         env:
           ABC: ${{ secrets.privkey }}
