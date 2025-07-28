@@ -218,8 +218,8 @@ jobs:
             }
           ' -F repo="ideal-fishstick" -F owner="Domix24" > query_data.json
           OID=$(jq '.data.repository.defaultBranchRef.target.history.nodes[0].oid' query_data.json)
+          OID=${OID#"|"}
           FILECO=$(date | base64)
-          echo $OID >> data.json
           cat data.json
           gh api graphql -H X-Github-Next-Global-ID:1 -f query='
             mutation ($input: CreateCommitOnBranchInput!) {
