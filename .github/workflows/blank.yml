@@ -233,7 +233,7 @@ jobs:
             -F input[branch][branchName]="main" \
             -F input[message][headline]=":)" \
             -F input[expectedHeadOid]="$OID" \
-            -F input[fileChanges][additions][]=$(jq -n '{ "path": "myfile.info", "contents": "$FILECO" }')
+            -F input[fileChanges][additions][]=(jq -n '{ "path": "myfile.info", "contents": "$FILECO" }')
         env:
           GH_TOKEN: ${{ github.token }}
 #          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
