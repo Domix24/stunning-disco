@@ -228,7 +228,7 @@ jobs:
           ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick" \
             -F input[branch][branchName]="main" \
             -F input[message][headline]=":)" \
-            -F input[expectedHeadOid]=$OID \
+            -f input[expectedHeadOid]=$OID \
             -F content="$FILECO" > query_data.json
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
