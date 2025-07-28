@@ -58,7 +58,8 @@ jobs:
             })
 
             // Send requests as GitHub App
-            const { slug } = await appOctokit.request("GET /app")
-            console.log("authenticated as %s", slug)
+            const info = await appOctokit.request("GET /app")
+            console.log(info)
+            //console.log("authenticated as %s", slug)
         env:
           ABC: ${{ secrets.privkey }}
