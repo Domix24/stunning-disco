@@ -39,3 +39,9 @@ jobs:
         uses: actions/setup-node@v3.9.1
 
       - run: npm install @octokit/auth-app
+
+      - name: GitHub Script
+        uses: actions/github-script@v7.0.1
+        with:
+          # The script to run
+          script: import { createAppAuth } from "@octokit/auth-app";
