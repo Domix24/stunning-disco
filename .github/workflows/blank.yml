@@ -52,4 +52,5 @@ jobs:
               clientId: "Iv23li2EoWnaln85QxbX",
               clientSecret: "1234567890abcdef12341234567890abcdef1234",
             })
-            console.log(auth)
+            const appAuthentication = await auth({ type: "app" })
+            console.log(appAuthentication)
