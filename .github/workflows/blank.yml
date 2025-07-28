@@ -77,6 +77,12 @@ jobs:
               },
             })
 
+            const issue = appiOctokit.request("POST /repos/{owner}/{repo}/issues", {
+              owner: "Domix24",
+              repo: "ideal-fishstick"
+            })
+            console.log(issue)
+
             /*const blob = await appiOctokit.request("POST /repos/{owner}/{repo}/git/blobs", {
               owner: "Domix24",
               repo: "ideal-fishstick",
@@ -91,7 +97,7 @@ jobs:
               file_sha: blob.data.sha
             })
             console.log(blobi)*/
-            const ref = await appiOctokit.request("GET /repos/{owner}/{repo}/git/ref/{ref}", {
+            /*const ref = await appiOctokit.request("GET /repos/{owner}/{repo}/git/ref/{ref}", {
               owner: "Domix24",
               repo: "ideal-fishstick",
               ref: "heads/main",
@@ -112,6 +118,6 @@ jobs:
             })
 
             console.log(commitTree)
-            console.log(ref)
+            console.log(ref)*/
         env:
           ABC: ${{ secrets.privkey }}
