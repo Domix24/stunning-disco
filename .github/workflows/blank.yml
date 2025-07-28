@@ -193,6 +193,6 @@ jobs:
           ABC: ${{ secrets.privkey }}
 
       - name: Get result
-        run: gh issue list
+        run: gh auth login
         env:
           GH_TOKEN: ${{ steps.github-script.outputs.result }}
