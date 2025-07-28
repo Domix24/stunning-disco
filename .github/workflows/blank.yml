@@ -216,7 +216,7 @@ jobs:
             }
           ' -F repo="ideal-fishstick" -F owner="Domix24" > query_data.json
           OID=$(jq '.data.repository.defaultBranchRef.target.history.nodes[0].oid' query_data.json)
-          DATE=$(date)
-          echo $OID $DATE
+          FILECO=$(date | base64)
+          echo $OID $FILECO "$FILECO"
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
