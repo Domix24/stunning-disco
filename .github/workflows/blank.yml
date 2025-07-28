@@ -64,5 +64,6 @@ jobs:
 
             const additional = await appOctokit.request("GET /app/installations")
             console.log(additional)
+            console.log(additional.data[0].permissions)
         env:
           ABC: ${{ secrets.privkey }}
