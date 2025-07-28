@@ -37,3 +37,5 @@ jobs:
           
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.9.1
+
+      - run: npm install @octokit/auth-app
