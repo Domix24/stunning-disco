@@ -96,7 +96,7 @@ jobs:
               repo: "ideal-fishstick",
               ref: "heads/main",
             })
-
+            console.log(ref.data.object)
             const commitTree = await appiOctokit.request("POST /repos/{owner}/{repo}/git/trees", {
               owner: "Domix24",
               repo: "ideal-fishstick",
