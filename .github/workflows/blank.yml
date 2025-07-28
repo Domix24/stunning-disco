@@ -77,12 +77,12 @@ jobs:
               },
             })
 
-            /*const issue = appiOctokit.request("POST /repos/{owner}/{repo}/issues", {
+            /*const issue = await appiOctokit.request("POST /repos/{owner}/{repo}/issues", {
               owner: "Domix24",
               repo: "ideal-fishstick",
               title: `hey ${new Date().toISOString()}`
             })*/
-            const issue = appiOctokit.request("GET /repos/{owner}/{repo}/issues/{issue_number}", {
+            const issue = await appiOctokit.request("GET /repos/{owner}/{repo}/issues/{issue_number}", {
               owner: "Domix24",
               repo: "ideal-fishstick",
               issue_number: 1
