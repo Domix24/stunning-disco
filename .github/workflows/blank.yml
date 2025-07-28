@@ -225,6 +225,7 @@ jobs:
                 }
               }
             }
+          ' -f variables='
             {
               "input": {
                 "branch": {
