@@ -196,7 +196,12 @@ jobs:
         id: testo
         run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
-      - name: Get result
+      - name: GitHub CLI
         run: gh issue list
+        env:
+          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
+
+      - name: Git CLI
+        run: git commit -m "hey"
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
