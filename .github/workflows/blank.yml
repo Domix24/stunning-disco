@@ -214,6 +214,7 @@ jobs:
                 }
               }
             }
-          ' -F repo="ideal-fishstick" -F owner="Domix24"
+          ' -F repo="ideal-fishstick" -F owner="Domix24" > query_data.json
+          echo OID=$(jq '.data.repository' query_data.json) >> $GITHUB_OUTPUT 
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
