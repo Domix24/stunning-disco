@@ -108,7 +108,7 @@ jobs:
                   content: `${new Date().toISOString()}`,
                 }
               ],
-              base_tree: ref.body.object.sha,
+              base_tree: ref.data.object.sha,
             })
 
             console.log(commitTree)
