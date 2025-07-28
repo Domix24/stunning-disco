@@ -66,12 +66,21 @@ jobs:
             console.log(additional)
             console.log(additional.data[0].permissions)
 
-            const blob = await appOctokit.request("POST /repos/{owner}/{repo}/git/blobs", {
+            // new auth
+            const appiOctokit = new Octokit({
+              authStrategy: createAppAuth,
+              auth: {
+                installationId: additional.data[0].id
+                privateKey: process.env.ABC,
+                clientId: "Iv23li2EoWnaln85QxbX"
+              },
+            })
+
+            const blob = await appiOctokit.request("POST /repos/{owner}/{repo}/git/blobs", {
               owner: "Domix24",
               repo: "ideal-fishstick",
               content: "hello",
-              encoding: "utf-8",
-              installationId: additional.data[0].id
+              encoding: "utf-8"
             })
             console.log(blob)
         env:
