@@ -197,8 +197,20 @@ jobs:
         run: echo VALUX=${{ steps.github-script.outputs.result }} >> $GITHUB_OUTPUT
 
       - name: GitHub CLI
-        run: gh auth status
+        run: |
+          gh api graphql -H X-Github-Next-Global-ID:1 -f query='
+            query($owner:String!, $repo:String!) {
+              repository(owner:$owner, name:$repo) {
+                name
+                description
+                id
+                stargazerCount
+                forkCount
+                issues(states:OPEN) {
+                  totalCount
+                }
+              }
+            }
+          ' -F repo="ideal-fishstick" -F owner="Domix24"
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
-
-
