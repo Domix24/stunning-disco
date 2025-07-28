@@ -225,27 +225,8 @@ jobs:
                 }
               }
             }
-          ' -f variables='
-            {
-              "input": {
-                "branch": {
-                  "repositoryNameWithOwner": "Domix24/ideal-fishstick",
-                  "branchName": "main"
-                },
-                "message": {
-                  "headline": "Hello!"
-                },
-                "fileChanges": {
-                  "additions": [
-                    {
-                      "path": "testfile.txt",
-                      "contents": $content
-                    }
-                  ]
-                },
-                "expectedHeadOid": $oid
-              }
-            }
-          ' -F oid=$OID -F content="$FILECO" > query_data.json
+          ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick"
+            -F oid=$OID
+            -F content="$FILECO" > query_data.json
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
