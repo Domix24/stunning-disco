@@ -91,11 +91,27 @@ jobs:
               file_sha: blob.data.sha
             })
             console.log(blobi)*/
-            const a = await appiOctokit.request('GET /repos/{owner}/{repo}/git/ref/{ref}', {
+            const ref = await appiOctokit.request("GET /repos/{owner}/{repo}/git/ref/{ref}", {
               owner: "Domix24",
               repo: "ideal-fishstick",
               ref: "heads/main",
             })
-            console.log(a)
+
+            const commitTree = await appiOctokit.request("POST /repos/{owner}/{repo}/git/trees", {
+              owner: "Domix24",
+              repo: "ideal-fishstick",
+              tree: [
+                {
+                  path: "hello.txt",
+                  mode: "100644",
+                  type: "blob",
+                  content: `${new Date().toISOString()}`,
+                }
+              ],
+              base_tree: ref.body.object.sha,
+            })
+
+            console.log(commitTree)
+            console.log(ref)
         env:
           ABC: ${{ secrets.privkey }}
