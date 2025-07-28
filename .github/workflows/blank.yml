@@ -199,15 +199,18 @@ jobs:
       - name: GitHub CLI
         run: |
           gh api graphql -H X-Github-Next-Global-ID:1 -f query='
-            query($owner:String!, $repo:String!) {
-              repository(owner:$owner, name:$repo) {
-                name
-                description
-                id
-                stargazerCount
-                forkCount
-                issues(states:OPEN) {
-                  totalCount
+            query myquery($repo: String!, $owner: String!) {
+              repository(name: $repo, owner: $owner) {
+                defaultBranchRef {
+                  target {
+                    ... on Commit {
+                      history(first: 2) {
+                        nodes {
+                          oid
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
