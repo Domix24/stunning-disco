@@ -225,7 +225,9 @@ jobs:
                 }
               }
             }
-          ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick" -F input[branch][branchName]="main"
+          ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick" \
+            -F input[branch][branchName]="main" \
+            -F input[messaage][headline]=":)" \
             -F oid=$OID
             -F content="$FILECO" > query_data.json
         env:
