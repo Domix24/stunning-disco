@@ -85,7 +85,7 @@ jobs:
             })
             console.log(blob)
 
-            const blobi = await octokit.request('GET /repos/{owner}/{repo}/git/blobs/{file_sha}', {
+            const blobi = await appiOctokit.request('GET /repos/{owner}/{repo}/git/blobs/{file_sha}', {
               owner: "Domix24",
               repo: "ideal-fishstick",
               file_sha: blob.data.sha
