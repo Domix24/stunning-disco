@@ -70,7 +70,7 @@ jobs:
             const appiOctokit = new Octokit({
               authStrategy: createAppAuth,
               auth: {
-                installationId: additional.data[0].id
+                installationId: additional.data[0].id,
                 privateKey: process.env.ABC,
                 clientId: "Iv23li2EoWnaln85QxbX"
               },
