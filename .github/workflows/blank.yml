@@ -234,7 +234,7 @@ jobs:
             -F input[message][headline]=":)" \
             -F input[expectedHeadOid]="$OID" \
             -F input[fileChanges][additions][][path]="when" \
-#            -F input[fileChanges][additions][0][contents]="$FILECO"
+            -F input[fileChanges][additions][0][contents]="$FILECO"
         env:
           GH_TOKEN: ${{ github.token }}
 #          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
