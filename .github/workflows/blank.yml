@@ -51,4 +51,5 @@ jobs:
               privateKey: "-----BEGIN PRIVATE KEY-----\n...",
               clientId: "Iv23li2EoWnaln85QxbX",
               clientSecret: "1234567890abcdef12341234567890abcdef1234",
-            });
+            })
+            console.log(auth)
