@@ -202,6 +202,8 @@ jobs:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
 
       - name: Git CLI
-        run: git commit -m "hey"
+        run: |
+          git config --local user.name pengawa-app[bot]
+          git commit -m "hey"
         env:
           GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
