@@ -221,7 +221,7 @@ jobs:
           OID=${OID#"\""}
           OID=${OID%"\""}
           FILECO=$(date | base64)
-          jq -n '{"query": "mutation ($input: CreateCommitOnBranchInput!) { createCommitOnBranch(input: $input) { commit { url } } }", "variables": {"input": {"branch": {"repositoryNameWithOwner":"domix24/ideal-fishstick","branchName":"main"},"expectedHeadOid":"$OID"}}}' >> info.json
+          jq -n '{"query": "mutation ($input: CreateCommitOnBranchInput!) { createCommitOnBranch(input: $input) { commit { url } } }", "variables": {"input": {"branch": {"repositoryNameWithOwner":"domix24/ideal-fishstick","branchName":"main"},"expectedHeadOid":$OID}}}' >> info.json
           gh api graphql -H X-Github-Next-Global-ID:1 --input info.json
         env:
           GH_TOKEN: ${{ github.token }}
