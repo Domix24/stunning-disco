@@ -229,7 +229,7 @@ jobs:
                 }
               }
             }
-          ' -F input[branch][repositoryNameWithOwner]="Domix24/ideal-fishstick" \
+          ' -F input[branch][repositoryNameWithOwner]="Domix24/deal-fishstick" \
             -F input[branch][branchName]="main" \
             -F input[message][headline]=":)" \
             -F input[expectedHeadOid]="$OID" \
