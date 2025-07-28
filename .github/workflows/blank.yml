@@ -199,4 +199,4 @@ jobs:
       - name: Get result
         run: gh issue list
         env:
-          GH_TOKEN: ${{ steps.testo.valux }}
+          GH_TOKEN: ${{ steps.testo.VALUX }}
