@@ -94,7 +94,7 @@ jobs:
             const a = await appiOctokit.request('GET /repos/{owner}/{repo}/git/ref/{ref}', {
               owner: "Domix24",
               repo: "ideal-fishstick",
-              ref: "head/main",
+              ref: "heads/main",
             })
             console.log(a)
         env:
