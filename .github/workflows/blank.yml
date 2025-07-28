@@ -45,7 +45,7 @@ jobs:
         with:
           # The script to run
           script: |
-            const { createAppAuth } = require("@octokit/auth-app")
+            /*const { createAppAuth } = require("@octokit/auth-app")
             const auth = createAppAuth({
               appId: 952584,
               privateKey: ${{ secrets.privkey }},
@@ -53,4 +53,6 @@ jobs:
               clientSecret: "1234567890abcdef12341234567890abcdef1234",
             })
             const appAuthentication = await auth({ type: "app" })
-            console.log(appAuthentication)
+            console.log(appAuthentication)*/
+            const value = ${{ secrets.privkey }}
+            console.log(value.length)
