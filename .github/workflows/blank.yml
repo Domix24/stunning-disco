@@ -61,5 +61,8 @@ jobs:
             const info = await appOctokit.request("GET /app")
             const slug = info.data.slug
             console.log("authenticated as %s", slug)
+
+            const additional = await appOctokit.request("GET /app").request("GET /app/installations")
+            console.log(additional)
         env:
           ABC: ${{ secrets.privkey }}
