@@ -45,8 +45,13 @@ jobs:
         with:
           # The script to run
           script: |
-            const value = process.env
-            console.log(value)
-            console.log(value.length)
+            const { createAppAuth } = require("@octokit/auth-app")
+            const auth = createAppAuth({
+              appId: 952584,
+              privateKey: process.env.ABC,
+              clientId: "Iv23li2EoWnaln85QxbX"
+            })
+            const appAuthentication = await auth({ type: "app" })
+            console.log(appAuthentication)
         env:
           ABC: ${{ secrets.privkey }}
