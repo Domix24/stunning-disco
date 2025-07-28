@@ -70,7 +70,8 @@ jobs:
               owner: "Domix24",
               repo: "ideal-fishstick",
               content: "hello",
-              encoding: "utf-8"
+              encoding: "utf-8",
+              installationId: additional.data[0].id
             })
             console.log(blob)
         env:
