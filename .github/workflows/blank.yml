@@ -184,7 +184,7 @@ jobs:
             })
 
             const tooken = await appiOctokit.request("POST /app/installations/{installation_id}/access_tokens", {
-              installationId: additional.data[0].id
+              installation_id: additional.data[0].id
             })
             console.log(tooken)
         env:
