@@ -235,5 +235,5 @@ jobs:
             -F input[expectedHeadOid]="$OID" \
             -F input[fileChanges][additions][0][path]="when" \
             -F input[fileChanges][additions][0][contents]="$FILECO"
-        env:
-          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
+#        env:
+#          GH_TOKEN: ${{ steps.testo.outputs.VALUX }}
